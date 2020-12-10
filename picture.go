@@ -627,10 +627,11 @@ func (f *File) drawingResize(sheet string, cell string, width, height float64, f
 		asp := float64(cellWidth) / width
 		width, height = float64(cellWidth), height*asp
 	}
-	if float64(cellHeight) < height {
-		asp := float64(cellHeight) / height
-		height, width = float64(cellHeight), width*asp
-	}
+	// NOTE: remove height adjust for get cell height value not as saw in Excel sometimes
+// 	if float64(cellHeight) < height {
+// 		asp := float64(cellHeight) / height
+// 		height, width = float64(cellHeight), width*asp
+// 	}
 	width, height = width-float64(formatSet.OffsetX), height-float64(formatSet.OffsetY)
 	w, h = int(width*formatSet.XScale), int(height*formatSet.YScale)
 	return
