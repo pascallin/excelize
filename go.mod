@@ -1,4 +1,4 @@
-module github.com/pascallin/excelize/v2
+module github.com/pascallin/excelize/v2.1
 
 go 1.11
 
